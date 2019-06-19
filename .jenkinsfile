@@ -12,14 +12,15 @@ bat "mvn clean"
 }
 }
 
-stage('Deploy') 
+stage('Deploy')
 {
 steps
 {
-echo 'deploying code'
+echo 'deploy cycle'
 }
 }
-stage('Test') 
+
+stage('Test')
 {
 steps
 {
@@ -27,7 +28,7 @@ bat "mvn test"
 }
 }
 
-stage('Unit Test') 
+stage('Unit Test')
 {
 steps
 {
@@ -35,28 +36,20 @@ bat "mvn clean"
 }
 }
 
-stage('UI Test') 
+stage('UI Test')
 {
 steps
 {
 bat "mvn compile"
 }
-
 }
-stage('Smoke Test') 
+
+stage('Release')
 {
 steps
 {
-bat "mvn install"
+bat "mvn test"
 }
-
-}
-stage('Release') 
-{
-mvn test
-
-}
-
 }
 
 }
