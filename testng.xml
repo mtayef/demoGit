@@ -3,9 +3,9 @@
 <suite name="Suite" parallel="classes">
   <test thread-count="5" name="Test" parallel="classes">
     <classes>
-      <class name="test3.Test3"/>
       <class name="test1.Test1"/>
       <class name="test2.Test2"/>
+      <class name="test3.Test3"/>
     </classes>
   </test> <!-- Test -->
 </suite> <!-- Suite -->
